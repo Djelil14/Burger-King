@@ -345,6 +345,148 @@ footer .div3 p :last-child{
 
 
 
+/* ---------------- Responsive ---------------- */
+
+/* TABLETTES */
+@media (max-width: 1024px) {
+    header {
+        padding: 5px 5%;
+    }
+
+    .logo {
+        width: 80px;
+        margin-left: 0;
+    }
+
+    .menu ul {
+        margin-left: 10px;
+    }
+
+    .menu ul a {
+        font-size: 12px;
+    }
+
+    .foods-list {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .foods-list img {
+        width: 300px;
+    }
+
+    .fidelity_prog {
+        flex-direction: column;
+        height: auto;
+        gap: 20px;
+        padding: 30px 5%;
+    }
+
+    .fidelity_prog .div1,
+    .fidelity_prog .div2,
+    .fidelity_prog .div3 {
+        width: 90%;
+        text-align: center;
+    }
+
+    .little-food_box {
+        flex-wrap: wrap;
+        height: auto;
+        gap: 20px;
+    }
+
+    .little-food_box .box {
+        width: 100%;
+        height: auto;
+        text-align: center;
+    }
+
+    footer.div2 {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+/* MOBILES */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 5%;
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .menu ul a {
+        padding: 10px 0;
+    }
+
+    .header-end {
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+
+    .home {
+        height: auto;
+        padding: 50px 10px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .foods-list img {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .fidelity_prog {
+        padding: 20px 5%;
+    }
+
+    .fidelity_prog .div1,
+    .fidelity_prog .div2,
+    .fidelity_prog .div3 {
+        width: 100%;
+    }
+
+    .little-food_box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .little-food_box .box {
+        width: 90%;
+    }
+
+    footer {
+        padding: 20px 5%;
+        text-align: center;
+    }
+
+    .icones_social i {
+        font-size: 18px;
+        margin-right: 10px;
+    }
+
+    footer img {
+        height: 40px;
+    }
+}
 
 
 
