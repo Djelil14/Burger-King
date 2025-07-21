@@ -275,7 +275,7 @@ h3{
 footer{
     background-color: #000;
     color: #fff;
-    margin-top: 20px;
+    margin-top: 10px;
     padding: 25px 10%;
 }
 
@@ -343,7 +343,125 @@ footer .div3 p :last-child{
 
 }
 
+/* Style pour les nouvelles sections */
+.about-section, .contact-section, .order-section {
+    padding: 120px 10% 50px 10%;
+    text-align: center;
+}
 
+.about-section img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 30px auto;
+    gap: 15px;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    align-self: center;
+}
+
+.order-steps {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    margin-top: 40px;
+    text-align: left;
+    flex-wrap: wrap;
+}
+
+.order-steps .step {
+    flex: 1;
+    min-width: 250px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fbf5ee;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.order-steps .step i {
+    font-size: 2em;
+    color: #f7a800;
+    margin-bottom: 10px;
+}
+.cta-button{
+    margin-top: 40px;
+}
+
+/* Page Menu */
+.menu-page {
+    padding: 120px 10% 50px 10%;
+}
+
+.menu-category {
+    margin-bottom: 40px;
+}
+
+.menu-category h2 {
+    font-family: 'Anton', sans-serif;
+    font-size: 28px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f7a800;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.menu-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.menu-item {
+    background-color: #fbf5ee;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.2s ease-out;
+}
+.menu-item:hover {
+    transform: scale(1.05);
+}
+
+.menu-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.menu-item .item-details {
+    padding: 15px;
+}
+
+.menu-item h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.menu-item .price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #bb2337;
+}
 
 /* ---------------- Responsive ---------------- */
 
@@ -392,12 +510,13 @@ footer .div3 p :last-child{
 
     .little-food_box {
         flex-wrap: wrap;
+        justify-content: center;
         height: auto;
         gap: 20px;
     }
 
     .little-food_box .box {
-        width: 100%;
+        width: 45%;
         height: auto;
         text-align: center;
     }
@@ -411,15 +530,29 @@ footer .div3 p :last-child{
 /* MOBILES */
 @media (max-width: 768px) {
     header {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
         padding: 10px 5%;
+    }
+    .logo{
+        flex-grow: 1;
+        text-align: center;
     }
 
     .menu {
+        order: 3;
         flex-direction: column;
         align-items: flex-start;
         width: 100%;
+        display: none; /* Caché par défaut */
+    }
+
+    .menu.active {
+        display: flex; /* Affiché quand la classe .active est ajoutée */
+    }
+    .menu_icons{
+        display: block;
     }
 
     .menu ul {
@@ -471,6 +604,10 @@ footer .div3 p :last-child{
 
     .little-food_box .box {
         width: 90%;
+    }
+
+    .order-steps {
+        flex-direction: column;
     }
 
     footer {
