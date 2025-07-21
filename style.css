@@ -23,6 +23,7 @@ z-index: 100;
 .menu_icons{
     width: 35px;
     cursor: pointer;
+    display: none;
 }
 .logo{
     width: 100px;
@@ -41,6 +42,12 @@ button img{
     display: flex;
     list-style: none ;
 }
+.menu ul li {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
 .menu ul a{
     margin-left: 10px;
     text-transform: capitalize;
@@ -48,6 +55,10 @@ button img{
     color: #000;
     text-decoration: 0;
     position: relative;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
 }
 .menu ul a::after{
     position: absolute;
@@ -531,44 +542,67 @@ footer .div3 p :last-child{
 @media (max-width: 768px) {
     header {
         flex-direction: row;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         align-items: center;
-        padding: 10px 5%;
-    }
-    .logo{
-        flex-grow: 1;
-        text-align: center;
+        padding: 10px 15px;
+        justify-content: space-between;
     }
 
     .menu {
-        order: 3;
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-        display: none; /* Caché par défaut */
-    }
-
-    .menu.active {
-        display: flex; /* Affiché quand la classe .active est ajoutée */
+        order: 1;
     }
     .menu_icons{
         display: block;
+        z-index: 1000;
     }
-
+    
     .menu ul {
+        display: none;
+        position: absolute;
+        top: 65px; 
+        left: 0;
+        width: 100%;
+        background: #fff;
         flex-direction: column;
         margin-left: 0;
-        width: 100%;
+        padding: 10px 0;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
     }
 
-    .menu ul a {
-        padding: 10px 0;
+    .menu.active ul {
+        display: flex;
+    }
+
+    .logo{
+        order: 2;
+        flex-grow: 0;
+        margin-left: 0;
+        width: 70px;
     }
 
     .header-end {
+        order: 3;
+        width: auto;
+        margin-top: 0;
+        justify-content: flex-end;
+    }
+
+    .header-end .fa-location-dot {
+        display: none;
+    }
+
+    .menu ul a {
+        padding: 16px 24px;
+        font-size: 18px;
+        color: #bb2337;
+        border-bottom: 1px solid #f7a800;
         width: 100%;
-        justify-content: space-between;
-        margin-top: 10px;
+        text-align: left;
+    }
+    .menu ul a:last-child {
+        border-bottom: none;
     }
 
     .home {
@@ -614,14 +648,30 @@ footer .div3 p :last-child{
         padding: 20px 5%;
         text-align: center;
     }
-
     .icones_social i {
         font-size: 18px;
         margin-right: 10px;
     }
-
     footer img {
         height: 40px;
+    }
+    footer .div2 {
+        flex-direction: column;
+        gap: 24px;
+        margin-top: 24px;
+    }
+    footer .div2 > div {
+        margin-bottom: 18px;
+    }
+    footer .div2 ul a {
+        font-size: 16px;
+        margin-bottom: 8px;
+        padding: 8px 0;
+        display: block;
+    }
+    footer .div2 h3 {
+        margin-bottom: 8px;
+        font-size: 18px;
     }
 }
 
